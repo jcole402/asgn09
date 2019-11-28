@@ -1,13 +1,14 @@
 <?php
 
-include_once('functions.php');
+include_once('includes/functions.php');
+
 
 $fromValue = '';
 $fromUnit = '';
 $toUnit = '';
 $toValue = '';
 
-if(!isset($_POST['submit'])) {
+if (!isset($_POST['submit'])) {
   $_POST['submit'] = '';
 }
 
@@ -15,7 +16,6 @@ if($_POST['submit']) {
   $fromValue = $_POST['fromValue'];
   $fromUnit = $_POST['fromUnit'];
   $toUnit = $_POST['toUnit'];
-  
   $toValue = convert_measurement($fromValue, $fromUnit, $toUnit);
 }
 
@@ -26,7 +26,7 @@ if($_POST['submit']) {
 <head>
   <meta charset="utf-8">
   <title>Convert Length</title>
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
 </head>
 
 <body>
